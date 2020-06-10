@@ -3,9 +3,16 @@ import { View, ActivityIndicator, StyleSheet } from 'react-native';
 
 import MapView, { Marker } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
+import { Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get("window");
+
+import api from '../src/services/api';
 
 const styles = StyleSheet.create({
   container: {
+    height: height,
+    width: width,
     ...StyleSheet.absoluteFill,
     backgroundColor: "#7159c1",
     alignItems: "center",
@@ -13,6 +20,8 @@ const styles = StyleSheet.create({
   },
 
   map: {
+    height: height,
+    width: width,
     ...StyleSheet.absoluteFillObject,
   },
 });
@@ -20,6 +29,7 @@ const styles = StyleSheet.create({
 function App() {
   const [loading, setLoading] = useState(true);
   const [coordinates, setCoordinates] = useState({});
+  const [points, setPoints] = useState([]);
 
   useEffect(() => {
     Geolocation.getCurrentPosition(
@@ -27,10 +37,10 @@ function App() {
         setCoordinates(coords);
         setLoading(false);
       },
-      (error) => { 
+      (error) => {
         console.log(error);
       },
-      { enableHighAccuracy: true, maximumAge: 10000, timeout: 10000 },
+      { enableHighAccuracy: false, maximumAge: 10000, timeout: 30000 },
     );
   }, []);
 
@@ -38,7 +48,7 @@ function App() {
     async function getData() {
       try {
         const { data } = await api.get(`/points`, {
-          params: coordinates
+          params: coordinates,
         });
 
         setPoints(data);

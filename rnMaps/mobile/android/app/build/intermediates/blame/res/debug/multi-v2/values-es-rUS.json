@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\rn\\gostack11\\Lives\\geoemapas\\MapsRN\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
+            "outputFile": "F:\\rn\\react-native-examples\\rnMaps\\mobile\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lucas\\.gradle\\caches\\transforms-2\\files-2.1\\6d45d9e0505112f0eec54f8796757f91\\play-services-base-17.0.0\\res\\values-es-rUS\\values.xml",
