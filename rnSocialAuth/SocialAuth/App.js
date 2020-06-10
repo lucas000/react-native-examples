@@ -1,106 +1,104 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
+  StatusBar,
   View,
   Text,
-  StatusBar,
+  ActivityIndicator,
 } from 'react-native';
-
 import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+  LoginButton,
+  AccessToken,
+  GraphRequest,
+  GraphRequestManager,
+} from 'react-native-fbsdk';
 
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+export default class App extends Component {
+  state = {
+    loading: false,
+    user: null,
+  };
+
+  getUserCallback = (error, result) => {
+    if (error) {
+      console.log('getUserError', error);
+    } else {
+      this.setState({user: result, loading: false});
+    }
+  };
+
+  getUserInfo = (token) => {
+    const infoRequest = new GraphRequest(
+      '/me',
+      {
+        accessToken: token,
+        parameters: {
+          fields: {string: 'email, name'},
+        },
+      },
+      this.getUserCallback,
+    );
+
+    new GraphRequestManager().addRequest(infoRequest).start();
+  };
+
+  render() {
+    return (
+      <>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView style={styles.container}>
+          <View style={styles.content}>
+            {this.loading && <ActivityIndicator />}
+            {this.user && (
+              <>
+                <Text style={styles.userName}>{this.state.user.name}</Text>
+                <Text style={styles.userEmail}>{this.state.user.email}</Text>
+              </>
+            )}
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+          <LoginButton
+            permissions={['public_profile', 'email']}
+            onLoginFinished={async (error, result) => {
+              if (error) {
+                console.log('auth error', error);
+              } else if (result.isCancelled) {
+                console.log('isCancelled');
+              } else {
+                const acessData = await AccessToken.getCurrentAccessToken();
+
+                this.setState({loading: true});
+                this.getUserInfo(acessData.accessToken);
+              }
+            }}
+            onLogoutFinished={() => this.setState({user: null})}
+          />
+        </SafeAreaView>
+      </>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+
+  content: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
   },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
+  userName: {
+    fontWeight: 'bold',
+    color: '#333',
     fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
   },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  userEmail: {
+    color: '#888',
+    fontSize: 14,
   },
 });
-
-export default App;
