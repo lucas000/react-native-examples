@@ -1,0 +1,113 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mapsrn"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+9        android:targetSdkVersion="28" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\debug\AndroidManifest.xml:5:5-77
+11-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\debug\AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:4:5-67
+12-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:5:5-79
+13-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:5:22-76
+14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+14-->[com.facebook.flipper:flipper:0.33.1] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\a07649b8b35a54e6fef342bea90ce568\jetified-flipper-0.33.1\AndroidManifest.xml:16:5-76
+14-->[com.facebook.flipper:flipper:0.33.1] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\a07649b8b35a54e6fef342bea90ce568\jetified-flipper-0.33.1\AndroidManifest.xml:16:22-73
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include required permissions for Google Maps API to run. -->
+15-->[:react-native-maps] F:\rn\gostack11\Lives\geoemapas\MapsRN\node_modules\react-native-maps\lib\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-81
+15-->[:react-native-maps] F:\rn\gostack11\Lives\geoemapas\MapsRN\node_modules\react-native-maps\lib\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:22-78
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+16-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
+17
+18    <uses-feature
+18-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+19        android:glEsVersion="0x00020000"
+19-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+20        android:required="true" />
+20-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+21
+22    <application
+22-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:7:5-31:19
+23        android:name="com.mapsrn.MainApplication"
+23-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:8:7-38
+24        android:allowBackup="false"
+24-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:12:7-34
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.1.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\4f509a65121478d6153615d7ef5b7c5f\core-1.1.0\AndroidManifest.xml:24:18-86
+26        android:debuggable="true"
+27        android:icon="@mipmap/ic_launcher"
+27-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:10:7-41
+28        android:label="@string/app_name"
+28-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:9:7-39
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:11:7-52
+30        android:theme="@style/AppTheme"
+30-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:13:7-38
+31        android:usesCleartextTraffic="true" >
+31-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\debug\AndroidManifest.xml:7:18-53
+32        <meta-data
+32-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:15:7-17:67
+33            android:name="com.google.android.geo.API_KEY"
+33-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:16:9-54
+34            android:value="AIzaSyC29ST_MFqSsEfSyt-NL8XFMOzWhdUPQGE" />
+34-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:17:9-64
+35
+36        <activity
+36-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:19:7-29:18
+37            android:name="com.mapsrn.MainActivity"
+37-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:20:9-37
+38            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+38-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:22:9-86
+39            android:label="@string/app_name"
+39-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:21:9-41
+40            android:launchMode="singleTask"
+40-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:23:9-40
+41            android:windowSoftInputMode="adjustResize" >
+41-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:24:9-51
+42            <intent-filter>
+42-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:25:9-28:25
+43                <action android:name="android.intent.action.MAIN" />
+43-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:26:13-65
+43-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:26:21-62
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:27:13-73
+45-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:27:23-70
+46            </intent-filter>
+47        </activity>
+48        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" /> <!-- Needs to be explicitly declared on P+ -->
+48-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:30:7-84
+48-->F:\rn\gostack11\Lives\geoemapas\MapsRN\android\app\src\main\AndroidManifest.xml:30:17-81
+49        <uses-library
+49-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+50            android:name="org.apache.http.legacy"
+50-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+51            android:required="false" />
+51-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\dcb0caa0b7590c92c93c5bf3cc09a745\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+52
+53        <activity
+53-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\6d45d9e0505112f0eec54f8796757f91\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+54            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+54-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\6d45d9e0505112f0eec54f8796757f91\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+55            android:exported="false"
+55-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\6d45d9e0505112f0eec54f8796757f91\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+56            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+56-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\6d45d9e0505112f0eec54f8796757f91\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+57
+58        <meta-data
+58-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\3e6a2f5cfb2a897ae4c8f892bb09d9ad\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+59            android:name="com.google.android.gms.version"
+59-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\3e6a2f5cfb2a897ae4c8f892bb09d9ad\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+60            android:value="@integer/google_play_services_version" />
+60-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\lucas\.gradle\caches\transforms-2\files-2.1\3e6a2f5cfb2a897ae4c8f892bb09d9ad\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+61    </application>
+62
+63</manifest>
