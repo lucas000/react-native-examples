@@ -1,4 +1,6 @@
 import React from 'react';
+import {Text} from 'react-native-svg';
+
 import {PieChart} from 'react-native-svg-charts';
 
 export default function Pizza() {
@@ -15,5 +17,29 @@ export default function Pizza() {
       ).slice(0, 7),
     },
   }));
-  return <PieChart style={{height: 500, padding: 16}} data={pieData} />;
+
+  const Labels = ({slices}) => {
+    return slices.map((slice, index) => {
+      const {pieCentroid, data} = slice;
+
+      return (
+        <Text
+          key={`pie-label-${index}`}
+          x={pieCentroid[0]}
+          y={pieCentroid[1]}
+          fontSize={24}
+          fill="white"
+          textAnchor="middle"
+          alignmentBaseline="middle">
+          {data.value}
+        </Text>
+      );
+    });
+  };
+
+  return (
+    <PieChart style={{height: 500, padding: 16}} data={pieData}>
+      <Labels />
+    </PieChart>
+  );
 }
